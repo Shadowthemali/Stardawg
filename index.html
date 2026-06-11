@@ -408,6 +408,68 @@
             line-height: 1.8;
         }
 
+        /* Live Chart Section */
+        #chart {
+            background: rgba(212, 175, 55, 0.03);
+            padding: 4.5rem 2rem;
+            margin: 0 -2rem 6rem -2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .chart-card {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 2.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 6px;
+            background: rgba(10, 8, 20, 0.5);
+        }
+
+        .chart-fallback-btn {
+            display: block;
+            width: 100%;
+            padding: 1.1rem 2.2rem;
+            background: linear-gradient(135deg, #d4af37 0%, #e8d4a0 100%);
+            color: #0f0a1e;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+        }
+
+        .chart-fallback-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(212, 175, 55, 0.35);
+        }
+
         /* Links Section */
         #links {
             background: rgba(212, 175, 55, 0.03);
@@ -517,9 +579,18 @@
                 padding: 2.5rem 1rem;
             }
 
+            #chart {
+                margin: 0 -1rem 6rem -1rem;
+                padding: 2.5rem 1rem;
+            }
+
             #links {
                 margin: 0 -1rem 6rem -1rem;
                 padding: 2.5rem 1rem;
+            }
+
+            .iframe-container {
+                padding-bottom: 85%;
             }
         }
 
@@ -569,6 +640,10 @@
             .links-grid {
                 grid-template-columns: 1fr;
             }
+
+            .iframe-container {
+                padding-bottom: 100%;
+            }
         }
     </style>
 </head>
@@ -585,6 +660,7 @@
                 <a href="#about">About</a>
                 <a href="#tokenomics">Tokenomics</a>
                 <a href="#roadmap">Roadmap</a>
+                <a href="#chart">Chart</a>
                 <a href="#links">Links</a>
             </nav>
         </div>
@@ -598,7 +674,7 @@
                 <h1>The Pack's Signal in the Stars</h1>
                 <p class="hero-subtitle">StarDawg is a premium Solana meme token with strong visual identity, clear messaging, and real utility. Join the cosmic revolution.</p>
                 <div class="hero-buttons">
-                    <a href="#links" class="btn btn-primary">Explore Links</a>
+                    <a href="#chart" class="btn btn-primary">View Live Chart</a>
                     <a href="#tokenomics" class="btn btn-secondary">View Tokenomics</a>
                 </div>
                 <div class="hero-stats">
@@ -665,6 +741,17 @@
             </div>
         </section>
 
+        <section id="chart">
+            <h2>Live Chart</h2>
+            <p class="section-subtitle">Trade $DAWG on Raydium with real-time pricing and market data.</p>
+            <div class="chart-card">
+                <div class="iframe-container">
+                    <iframe src="https://raydium.io/swap/?inputMint=sol&outputMint=7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" title="Raydium Swap Widget"></iframe>
+                </div>
+                <a href="https://raydium.io/swap/?inputMint=sol&outputMint=7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" target="_blank" rel="noopener noreferrer" class="chart-fallback-btn">Open on Raydium</a>
+            </div>
+        </section>
+
         <section id="links">
             <h2>Connect & Explore</h2>
             <p class="section-subtitle">Join the StarDawg community and stay updated on all developments.</p>
@@ -672,7 +759,7 @@
                 <a href="https://example.com/whitepaper" target="_blank" rel="noopener noreferrer" class="link-btn">Whitepaper</a>
                 <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="link-btn">X / Twitter</a>
                 <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="link-btn">Telegram</a>
-                <a href="https://example.com/chart" target="_blank" rel="noopener noreferrer" class="link-btn">Chart</a>
+                <a href="https://raydium.io/swap/?inputMint=sol&outputMint=7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" target="_blank" rel="noopener noreferrer" class="link-btn">Trade</a>
             </div>
         </section>
     </main>
