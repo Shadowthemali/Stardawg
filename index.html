@@ -20,8 +20,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
             color: #e0e0e0;
-            background: linear-gradient(135deg, rgba(15, 10, 30, 0.85) 0%, rgba(25, 15, 45, 0.85) 100%), 
-                        url('./Stardawg-banner.jpeg') center center / cover no-repeat fixed;
+            background: linear-gradient(135deg, rgba(10, 8, 20, 0.88) 0%, rgba(20, 12, 35, 0.88) 100%), 
+                        url('https://static-create.jup.ag/jup-create/images/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx.jpeg?_=1781206409594') center center / cover no-repeat fixed;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -48,10 +48,10 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: rgba(15, 10, 30, 0.98);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 1rem 0;
+            background: rgba(10, 8, 20, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 0.875rem 0;
         }
 
         .header-content {
@@ -69,19 +69,25 @@
             gap: 1rem;
             text-decoration: none;
             color: #d4af37;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-section:hover {
+            opacity: 0.9;
         }
 
         .logo-section img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 2px solid #d4af37;
+            width: 52px;
+            height: 52px;
+            border-radius: 8px;
+            border: 1.5px solid rgba(212, 175, 55, 0.3);
             object-fit: cover;
+            background: rgba(212, 175, 55, 0.05);
         }
 
         .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.4rem;
+            font-weight: 800;
             letter-spacing: 2px;
             color: #d4af37;
             text-transform: uppercase;
@@ -95,11 +101,13 @@
 
         nav a {
             text-decoration: none;
-            color: #b0b0b0;
+            color: #a8a8a8;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         nav a::after {
@@ -108,7 +116,7 @@
             bottom: -4px;
             left: 0;
             width: 0;
-            height: 2px;
+            height: 1.5px;
             background: #d4af37;
             transition: width 0.3s ease;
         }
@@ -135,7 +143,7 @@
 
         /* Hero Section */
         #hero {
-            min-height: 90vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -153,43 +161,44 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 20% 40%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 850px;
         }
 
         .eyebrow {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
+            font-size: 0.85rem;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             color: #d4af37;
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         h1 {
-            font-size: 4rem;
-            font-weight: 800;
+            font-size: 4.2rem;
+            font-weight: 900;
             margin-bottom: 1.5rem;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #d4af37 0%, #e8d4a0 100%);
+            line-height: 1.05;
+            background: linear-gradient(135deg, #d4af37 0%, #f0d968 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.02em;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            color: #c0c0c0;
+            font-size: 1.25rem;
+            color: #c8c8c8;
             margin-bottom: 2.5rem;
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .hero-buttons {
@@ -197,20 +206,20 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 1.1rem 2.2rem;
             border: 2px solid #d4af37;
-            border-radius: 4px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             cursor: pointer;
             text-align: center;
         }
@@ -219,11 +228,12 @@
             background: linear-gradient(135deg, #d4af37 0%, #e8d4a0 100%);
             color: #0f0a1e;
             border-color: #d4af37;
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(212, 175, 55, 0.35);
         }
 
         .btn-secondary {
@@ -233,120 +243,129 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(212, 175, 55, 0.1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            background: rgba(212, 175, 55, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(212, 175, 55, 0.25);
         }
 
         .hero-stats {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 3rem;
         }
 
         .stat-card {
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 1.5rem 2rem;
-            border-radius: 4px;
-            backdrop-filter: blur(5px);
-            min-width: 150px;
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 1.8rem 2.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+            min-width: 160px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .stat-label {
-            font-size: 0.85rem;
-            color: #999;
+            font-size: 0.8rem;
+            color: #888;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
         .stat-value {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 800;
             color: #d4af37;
         }
 
         /* Section Headers */
         h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #d4af37 0%, #e8d4a0 100%);
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #d4af37 0%, #f0d968 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.01em;
         }
 
         .section-subtitle {
-            font-size: 1.1rem;
-            color: #b0b0b0;
-            margin-bottom: 3rem;
-            max-width: 600px;
+            font-size: 1.05rem;
+            color: #a8a8a8;
+            margin-bottom: 3.5rem;
+            max-width: 700px;
+            line-height: 1.6;
         }
 
         /* About Section */
         #about {
-            background: rgba(212, 175, 55, 0.02);
-            padding: 4rem 2rem;
+            background: rgba(212, 175, 55, 0.03);
+            padding: 4.5rem 2rem;
             margin: 0 -2rem 6rem -2rem;
             border-top: 1px solid rgba(212, 175, 55, 0.1);
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .about-content {
-            max-width: 800px;
+            max-width: 850px;
         }
 
         .about-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #d0d0d0;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 1.8rem;
+            color: #d4d4d4;
         }
 
         /* Tokenomics Section */
         .tokenomics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
         }
 
         .tokenomics-card {
             background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 2rem;
-            border-radius: 4px;
-            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            padding: 2.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
             transition: all 0.3s ease;
         }
 
         .tokenomics-card:hover {
             background: rgba(212, 175, 55, 0.12);
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-6px);
         }
 
         .tokenomics-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #d4af37;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
         }
 
         .tokenomics-card p {
-            color: #b0b0b0;
-            line-height: 1.7;
+            color: #a8a8a8;
+            line-height: 1.8;
         }
 
         /* Roadmap Section */
         .roadmap-timeline {
             position: relative;
-            margin-top: 2rem;
-            padding-left: 3rem;
+            margin-top: 2.5rem;
+            padding-left: 3.5rem;
         }
 
         .roadmap-timeline::before {
@@ -356,41 +375,43 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, #d4af37 0%, transparent 100%);
+            background: linear-gradient(180deg, #d4af37 0%, rgba(212, 175, 55, 0.2) 100%);
         }
 
         .roadmap-phase {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             position: relative;
         }
 
         .roadmap-phase::before {
             content: '';
             position: absolute;
-            left: -36px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
+            left: -40px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
             background: #d4af37;
             border-radius: 50%;
-            border: 2px solid #0f0a1e;
+            border: 2.5px solid #0f0a1e;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
         }
 
         .roadmap-phase h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #d4af37;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.7rem;
+            font-weight: 800;
         }
 
         .roadmap-phase p {
-            color: #b0b0b0;
-            line-height: 1.6;
+            color: #a8a8a8;
+            line-height: 1.8;
         }
 
         /* Links Section */
         #links {
-            background: rgba(212, 175, 55, 0.02);
-            padding: 4rem 2rem;
+            background: rgba(212, 175, 55, 0.03);
+            padding: 4.5rem 2rem;
             margin: 0 -2rem 6rem -2rem;
             border-top: 1px solid rgba(212, 175, 55, 0.1);
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
@@ -398,47 +419,48 @@
 
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
         }
 
         .link-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: 1.8rem;
             background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 4px;
+            border: 1.5px solid rgba(212, 175, 55, 0.18);
+            border-radius: 8px;
             text-decoration: none;
             color: #d4af37;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
         }
 
         .link-btn:hover {
             background: rgba(212, 175, 55, 0.15);
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.2);
         }
 
         /* Footer */
         footer {
-            background: rgba(15, 10, 30, 0.9);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 2rem;
+            background: rgba(10, 8, 20, 0.95);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 2.5rem;
             text-align: center;
-            color: #999;
+            color: #888;
             margin-top: 4rem;
         }
 
         footer p {
             margin: 0;
+            font-size: 0.95rem;
         }
 
         /* Responsive Design */
@@ -449,15 +471,15 @@
 
             nav {
                 gap: 1.5rem;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .hero-buttons {
@@ -471,19 +493,19 @@
 
             .hero-stats {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.2rem;
             }
 
             nav a {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
 
             .roadmap-timeline {
-                padding-left: 2rem;
+                padding-left: 2.5rem;
             }
 
             .roadmap-phase::before {
-                left: -27px;
+                left: -32px;
             }
 
             main {
@@ -503,24 +525,24 @@
 
         @media (max-width: 480px) {
             .logo-text {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .logo-section img {
-                width: 40px;
-                height: 40px;
+                width: 44px;
+                height: 44px;
             }
 
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .eyebrow {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
 
             .hero-subtitle {
@@ -528,8 +550,8 @@
             }
 
             .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.85rem 1.5rem;
+                font-size: 0.85rem;
             }
 
             nav {
@@ -537,13 +559,16 @@
             }
 
             nav a {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
-        }
 
-        /* Error Logging */
-        .error-log {
-            display: none;
+            .tokenomics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -553,7 +578,7 @@
     <header>
         <div class="header-content">
             <a href="./" class="logo-section">
-                <img src="./7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx.jpeg" alt="StarDawg Logo">
+                <img src="https://static-create.jup.ag/images/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx-4245ad5b-9afe-4a7a-bd83-0c387bc0a2f3.jpg" alt="StarDawg Logo">
                 <div class="logo-text">$DAWG</div>
             </a>
             <nav>
