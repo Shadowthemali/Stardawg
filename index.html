@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StarDawg | $DAWG</title>
+    <meta name="description" content="StarDawg ($DAWG) is a Solana meme token and community-driven brand built for the pack." />
+    <link rel="canonical" href="/" />
+    <meta property="og:title" content="StarDawg | $DAWG" />
+    <meta property="og:description" content="StarDawg ($DAWG) is a Solana meme token and community-driven brand built for the pack." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --bg: #070b14;
+        --panel: rgba(14, 20, 38, 0.82);
+        --panel-2: rgba(21, 30, 56, 0.9);
+        --text: #f4f7ff;
+        --muted: #aeb9da;
+        --accent: #f6c445;
+        --accent-2: #7cf7c6;
+        --border: rgba(255,255,255,.10);
+        --shadow: 0 20px 60px rgba(0,0,0,.35);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(246,196,69,.14), transparent 28%),
+          radial-gradient(circle at 80% 0%, rgba(124,247,198,.12), transparent 22%),
+          linear-gradient(180deg, #08101f 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+      a { color: inherit; text-decoration: none; }
+      .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+      .skip-link:focus { left:1rem; top:1rem; width:auto; height:auto; background:#fff; color:#000; padding:.5rem .75rem; z-index:1000; border-radius:.5rem; }
+      .wrap { width:min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+      header { position: sticky; top: 0; backdrop-filter: blur(16px); background: rgba(7,11,20,.62); border-bottom: 1px solid var(--border); z-index: 20; }
+      .nav { display:flex; align-items:center; justify-content:space-between; padding: 1rem 0; gap: 1rem; }
+      .brand { display:flex; align-items:center; gap:.8rem; font-weight: 800; letter-spacing:.04em; }
+      .mark { width:44px; height:44px; border-radius:14px; display:grid; place-items:center; background: linear-gradient(135deg, var(--accent), #ff8a5b); color:#171717; box-shadow: var(--shadow); font-weight: 900; }
+      .navlinks { display:flex; gap:1rem; flex-wrap:wrap; color: var(--muted); font-size:.95rem; }
+      .hero { padding: 5rem 0 2rem; }
+      .hero-grid { display:grid; grid-template-columns: 1.3fr .9fr; gap: 1.5rem; align-items: stretch; }
+      .card {
+        background: linear-gradient(180deg, var(--panel), rgba(10,14,28,.92));
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        border-radius: 28px;
+      }
+      .hero-main { padding: 2.25rem; }
+      .eyebrow { display:inline-flex; gap:.5rem; align-items:center; padding:.45rem .8rem; border:1px solid var(--border); border-radius:999px; color: var(--muted); font-size:.9rem; background: rgba(255,255,255,.03); }
+      h1 { margin: 1rem 0 .85rem; font-size: clamp(3rem, 8vw, 5.6rem); line-height: .95; letter-spacing: -.05em; }
+      .lead { font-size: 1.1rem; line-height: 1.7; color: var(--muted); max-width: 62ch; }
+      .actions { display:flex; gap:.9rem; flex-wrap:wrap; margin-top: 1.5rem; }
+      .btn { padding: .95rem 1.2rem; border-radius: 999px; font-weight: 700; border:1px solid var(--border); background: rgba(255,255,255,.04); }
+      .btn.primary { background: linear-gradient(135deg, var(--accent), #ffd86a); color:#121212; border-color: transparent; }
+      .hero-side { display:grid; gap: 1rem; }
+      .stat { padding: 1.25rem; background: var(--panel-2); border-radius: 24px; border: 1px solid var(--border); }
+      .stat .label { color: var(--muted); font-size:.9rem; }
+      .stat .value { font-size: 1.6rem; font-weight: 800; margin-top: .35rem; }
+      section { padding: 1.3rem 0; }
+      .section-title { display:flex; justify-content:space-between; align-items:end; gap:1rem; margin: 0 0 .9rem; }
+      h2 { margin: 0; font-size: 1.65rem; }
+      .sub { color: var(--muted); margin:0; }
+      .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .feature, .roadmap, .tokenomics, .links { padding: 1.2rem; }
+      .feature h3, .roadmap h3, .tokenomics h3 { margin:.1rem 0 .45rem; }
+      .feature p, .roadmap p, .tokenomics p { color: var(--muted); line-height: 1.65; margin:0; }
+      .pill { display:inline-block; padding:.35rem .65rem; border-radius:999px; background: rgba(124,247,198,.12); color: var(--accent-2); border:1px solid rgba(124,247,198,.25); font-size:.85rem; margin-bottom:.7rem; }
+      .roadmap ul { margin: .75rem 0 0; padding-left: 1.1rem; color: var(--muted); line-height: 1.75; }
+      .links a { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; margin:.3rem .5rem .3rem 0; }
+      .footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .95rem; }
+      @media (max-width: 900px) {
+        .hero-grid, .grid-3 { grid-template-columns: 1fr; }
+        .nav { flex-direction: column; align-items:flex-start; }
+        .hero { padding-top: 3rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header>
+      <div class="wrap nav">
+        <div class="brand"><div class="mark">DAWG</div><div>StarDawg</div></div>
+        <nav class="navlinks" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#tokenomics">Tokenomics</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#links">Links</a>
+        </nav>
+      </div>
+    </header>
+    <main id="content">
+      <div class="wrap hero">
+        <div class="hero-grid">
+          <section class="card hero-main">
+            <div class="eyebrow">Built for the pack • Solana native • $DAWG</div>
+            <h1>StarDawg is the pack's signal in the stars.</h1>
+            <p class="lead">A sharp, high-energy landing page for the StarDawg project — built to introduce the brand, showcase the token, and drive the community toward the next launch step.</p>
+            <div class="actions">
+              <a class="btn primary" href="#links">Explore links</a>
+              <a class="btn" href="#tokenomics">View tokenomics</a>
+            </div>
+          </section>
+          <aside class="hero-side">
+            <div class="stat card"><div class="label">Token</div><div class="value">$DAWG</div></div>
+            <div class="stat card"><div class="label">Chain</div><div class="value">Solana</div></div>
+            <div class="stat card"><div class="label">Theme</div><div class="value">Dark / Gold</div></div>
+          </aside>
+        </div>
+      </div>
+
+      <section class="wrap" id="about">
+        <div class="section-title"><h2>About StarDawg</h2><p class="sub">A cleaner final version of the draft.</p></div>
+        <div class="card feature">
+          <span class="pill">Community-first</span>
+          <p>StarDawg is positioned as a meme-driven crypto brand with a strong visual identity, clear messaging, and a simple path to community growth. The final version should feel more polished, more focused, and less like a placeholder.</p>
+        </div>
+      </section>
+
+      <section class="wrap" id="tokenomics">
+        <div class="section-title"><h2>Tokenomics</h2><p class="sub">Simple, readable, and on-brand.</p></div>
+        <div class="grid-3">
+          <article class="card tokenomics"><h3>Supply</h3><p>1,000,000,000 total supply, presented clearly for holders and visitors.</p></article>
+          <article class="card tokenomics"><h3>Identity</h3><p>Gold accents, dark cosmic backgrounds, and a stronger meme-coin presence.</p></article>
+          <article class="card tokenomics"><h3>Community</h3><p>Direct calls to action for social links, updates, and future utility.</p></article>
+        </div>
+      </section>
+
+      <section class="wrap" id="roadmap">
+        <div class="section-title"><h2>Roadmap</h2><p class="sub">Keep it short and sharp.</p></div>
+        <div class="card roadmap">
+          <ul>
+            <li>Phase 1: Final landing page and brand polish.</li>
+            <li>Phase 2: Community growth and social rollout.</li>
+            <li>Phase 3: Utility, updates, and ecosystem expansion.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="wrap" id="links">
+        <div class="section-title"><h2>Links</h2><p class="sub">Replace these with your real project URLs.</p></div>
+        <div class="card links">
+          <a class="btn primary" href="#">Whitepaper</a>
+          <a class="btn" href="#">X / Twitter</a>
+          <a class="btn" href="#">Telegram</a>
+          <a class="btn" href="#">Chart</a>
+        </div>
+      </section>
+
+      <div class="wrap footer">© 2026 StarDawg. Built for the pack.</div>
+    </main>
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('Captured error:', e && e.message, e && e.filename, e && e.lineno, e && e.colno, e && e.error);
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        console.error('Unhandled promise rejection:', e && e.reason);
+      });
+      try { console.log('StarDawg page loaded'); } catch (e) { console.error(e); }
+    </script>
+  </body>
+</html>
