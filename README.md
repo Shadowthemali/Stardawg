@@ -4,8 +4,25 @@ Static GitHub Pages site for Stardawg.
 
 ## Deploy hash
 
-This site publishes a `version.txt` file containing the current short Git commit hash.
+The live site publishes a `version.txt` file with the current short Git commit hash.
 
-Example:
+## Check it
 
-\`git rev-parse --short HEAD > version.txt\`
+```bash
+git rev-parse --short HEAD
+curl https://shadowthemali.github.io/Stardawg/version.txt
+
+# Stardawg
+
+Static GitHub Pages site for Stardawg.
+
+## Deploy hash
+
+The live site publishes a `version.txt` file with the current short Git commit hash.
+
+## Check it
+
+```bash
+git rev-parse --short HEAD
+curl https://shadowthemali.github.io/Stardawg/version.txt
+
