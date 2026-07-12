@@ -549,20 +549,6 @@
             margin-bottom: 1rem;
         }
 
-        .alternate-badge {
-            display: inline-block;
-            width: fit-content;
-            background: rgba(212, 175, 55, 0.2);
-            color: #d4af37;
-            padding: 0.4rem 1rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
         .trade-card h3 {
             font-size: 1.8rem;
             color: #d4af37;
@@ -857,8 +843,8 @@
         <section id="about">
             <h2>About StarDawg</h2>
             <div class="about-content">
-                <p>StarDawg represents more than just a token—it's a movement. Built on Solana's lightning-fast blockchain, $DAWG combines the energy of meme culture with genuine utility and premium branding that commands respect in the crypto space.</p>
-                <p>Our mission is clear: deliver a token with distinctive visual identity, compelling messaging, and real-world use cases. StarDawg is engineered for communities that demand excellence and authenticity.</p>
+                <p>StarDawg represents more than just a token—it's a movement. Built on Solana's lightning-fast blockchain, $DAWG combines the energy of meme culture with genuine utility and premium positioning.</p>
+                <p>Our mission is clear: deliver a token with distinctive visual identity, compelling messaging, and real-world use cases. StarDawg is engineered for communities that demand excellence.</p>
                 <p>Whether you're exploring opportunities in decentralized finance or joining a passionate community of believers, StarDawg is positioned to lead the next wave of Solana innovation.</p>
             </div>
         </section>
@@ -905,9 +891,9 @@
             <h2>Live Chart</h2>
             <p class="section-subtitle">Track $DAWG price, volume, and market trends in real-time.</p>
             <div class="chart-card">
-                <div id="chart-status" class="chart-status-label">Primary chart - Jupiter</div>
+                <div id="chart-status" class="chart-status-label">Primary chart - Cabana</div>
                 <div class="iframe-container">
-                    <iframe id="chart-iframe" src="https://dexscreener.com/solana/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" title="$DAWG Token Chart"></iframe>
+                    <iframe id="chart-iframe" src="https://cabana.exchange/token/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" title="$DAWG Token Chart"></iframe>
                 </div>
                 <a href="https://dexscreener.com/solana/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" target="_blank" rel="noopener noreferrer" class="chart-fallback-btn">Open on DEX Screener</a>
             </div>
@@ -920,7 +906,7 @@
                 <div class="trade-card featured">
                     <div class="featured-badge">⭐ Primary Platform</div>
                     <h3>Jupiter</h3>
-                    <p class="trade-description">The leading DEX aggregator on Solana. Jupiter provides the best prices through intelligent routing across multiple pools. Swap SOL for $DAWG instantly with minimal slippage.</p>
+                    <p class="trade-description">The leading DEX aggregator on Solana. Jupiter provides the best prices through intelligent routing across multiple pools. Swap SOL for $DAWG instantly with seamless liquidity.</p>
                     <a href="https://jup.ag/tokens/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" target="_blank" rel="noopener noreferrer" class="trade-btn">Trade on Jupiter</a>
                 </div>
                 <div class="trade-card">
@@ -939,7 +925,6 @@
                     <a href="https://dexscreener.com/solana/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" target="_blank" rel="noopener noreferrer" class="trade-btn">Trade on DEX Screener</a>
                 </div>
                 <div class="trade-card">
-                    <div class="alternate-badge">🔄 Alternate Trade Link</div>
                     <h3>Cabana Exchange</h3>
                     <p class="trade-description">Fast and user-friendly trading experience for Solana tokens. Cabana Exchange offers an intuitive interface combined with deep liquidity for seamless $DAWG trading.</p>
                     <a href="https://cabana.exchange/token/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx" target="_blank" rel="noopener noreferrer" class="trade-btn">Trade on Cabana</a>
@@ -976,6 +961,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const chartIframe = document.getElementById('chart-iframe');
             const chartStatus = document.getElementById('chart-status');
+            const cabanaUrl = 'https://cabana.exchange/token/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx';
             const dexScreenerUrl = 'https://dexscreener.com/solana/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx';
             
             let chartLoadAttempted = false;
@@ -1003,10 +989,9 @@
             }
             
             function switchToFallbackChart() {
-                chartIframe.src = dexScreenerUrl;
-                chartStatus.textContent = 'Alternate chart - DEX Screener';
+                chartStatus.textContent = 'Fallback chart - DEX Screener';
                 chartStatus.classList.add('fallback');
-                chartLoadAttempted = true;
+                chartIframe.src = dexScreenerUrl;
             }
             
             setupChartFallback();
