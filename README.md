@@ -8,4 +8,4 @@ This site publishes a `version.txt` file containing the current short Git commit
 
 Example:
 
-`git rev-parse --short HEAD > version.txt`
+\`git rev-parse --short HEAD > version.txt\`
