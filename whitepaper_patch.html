@@ -1,0 +1,95 @@
+<style>
+:root{
+  --bg:#050805;
+  --bg-2:#0d120d;
+  --panel:#0f160f;
+  --panel-2:#111a11;
+  --border:#1f3b1f;
+  --accent:#39d353;
+  --accent-2:#1f8f43;
+  --text:#e6f2e6;
+  --muted:#9bb59b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  padding:0;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Inter,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top, rgba(57,211,83,.10), transparent 35%),
+    linear-gradient(135deg, rgba(5,8,5,.98), rgba(10,14,10,.98));
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{opacity:.92}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:var(--bg);padding:8px 16px;z-index:100;border-radius:0 0 4px 0;font-weight:700}.skip-link:focus{top:0}
+header{position:sticky;top:0;z-index:50;background:rgba(5,8,5,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(57,211,83,.14);padding:.875rem 0}
+.header-content, main{max-width:1200px;margin:0 auto;padding:0 2rem}
+.logo-section{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--accent)}
+.logo-section img{width:52px;height:52px;border-radius:8px;border:1.5px solid rgba(57,211,83,.28);object-fit:cover;background:rgba(57,211,83,.06)}
+.logo-text{font-size:1.4rem;font-weight:800;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+nav{display:flex;gap:2.5rem;align-items:center}
+nav a{color:#a8b8a8;font-weight:500;font-size:.9rem;position:relative;text-transform:uppercase;letter-spacing:.5px}
+nav a:after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--accent);transition:width .3s ease}
+nav a:hover{color:var(--accent)}
+nav a:hover:after{width:100%}
+section{scroll-margin-top:80px;margin-bottom:6rem}
+.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:4rem 2rem}
+.hero-background{position:absolute;inset:0;background:radial-gradient(circle at 20% 40%, rgba(57,211,83,.08) 0, transparent 45%),radial-gradient(circle at 85% 75%, rgba(57,211,83,.06) 0, transparent 50%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:850px}
+.eyebrow{font-size:.85rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;font-weight:700}
+h1{font-size:4.2rem;font-weight:900;margin-bottom:1.5rem;line-height:1.05;color:var(--accent)}
+.hero-subtitle,.section-subtitle{color:var(--muted)}
+.hero-subtitle{font-size:1.25rem;margin-bottom:2.5rem;font-weight:300;line-height:1.7}
+.hero-buttons{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn,.trade-btn,.link-btn,.discussion-fallback-btn{display:inline-block;padding:1.1rem 2.2rem;border:2px solid var(--accent);border-radius:6px;text-decoration:none;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:1.2px;cursor:pointer;text-align:center;transition:all .3s ease}
+.btn-primary,.trade-btn,.discussion-fallback-btn{background:linear-gradient(135deg,var(--accent) 0,var(--accent-2) 100%);color:var(--bg);box-shadow:0 8px 24px rgba(57,211,83,.18)}
+.btn-secondary{background:transparent;color:var(--accent)}
+.btn:hover,.trade-btn:hover,.link-btn:hover,.discussion-fallback-btn:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(57,211,83,.28)}
+.hero-stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3rem}
+.stat-card,.tokenomics-card,.roadmap-phase,.chart-card,.trade-card,.discussion-card{background:rgba(13,18,13,.92);border:1px solid rgba(57,211,83,.18);padding:1.8rem 2rem;border-radius:8px;backdrop-filter:blur(8px)}
+.stat-label{font-size:.8rem;color:#8aa18a;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.6rem;font-weight:600}
+.stat-value{font-size:1.6rem;font-weight:800;color:var(--accent)}
+h2{font-size:3rem;font-weight:900;margin-bottom:1.2rem;color:var(--accent)}
+.about,.chart,.trade,.links{background:rgba(57,211,83,.03);padding:4.5rem 2rem;margin:0 -2rem 6rem -2rem;border-top:1px solid rgba(57,211,83,.10);border-bottom:1px solid rgba(57,211,83,.10)}
+.about-content{max-width:850px}.about-content p,.tokenomics-card p,.roadmap-phase p,.trade-description{color:#c7d7c7;line-height:1.8}
+.tokenomics-grid,.trade-grid,.links-grid{display:grid;gap:2.5rem;margin-top:2.5rem}
+.tokenomics-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.trade-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.links-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.roadmap-timeline{position:relative;margin-top:2.5rem;padding-left:3.5rem}
+.roadmap-timeline:before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent) 0,rgba(57,211,83,.18) 100%)}
+.roadmap-phase{position:relative;margin-bottom:3rem}
+.roadmap-phase:before{content:'';position:absolute;left:-40px;top:8px;width:14px;height:14px;background:var(--accent);border-radius:50%;border:2.5px solid var(--bg);box-shadow:0 0 0 4px rgba(57,211,83,.16)}
+.chart-status-label,.featured-badge{display:inline-block;width:fit-content;background:linear-gradient(135deg,var(--accent) 0,var(--accent-2) 100%);color:var(--bg);padding:.4rem 1rem;border-radius:999px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+.chart-status-label.fallback{background:rgba(57,211,83,.14);color:var(--accent)}
+.iframe-container{position:relative;width:100%;height:0;padding-bottom:56.25%;overflow:hidden;margin-bottom:1.5rem;border-radius:6px;border:1px solid rgba(57,211,83,.16);background:var(--bg-2)}
+.iframe-container iframe{position:absolute;inset:0;width:100%;height:100%;border:none;background:rgba(5,8,5,.7)}
+footer{background:rgba(5,8,5,.96);border-top:1px solid rgba(57,211,83,.14);padding:2.5rem;text-align:center;color:#7f927f;margin-top:4rem}
+@media (max-width:768px){
+  .header-content{padding:0 1rem} nav{gap:1.5rem;font-size:.85rem} h1{font-size:2.8rem} h2{font-size:2.2rem}
+  .hero-buttons{flex-direction:column;gap:1rem}.btn{width:100%}.hero-stats{flex-direction:column;gap:1.2rem}
+  main,.about,.chart,.trade,.links{padding-left:1rem;padding-right:1rem;margin-left:-1rem;margin-right:-1rem}
+  .roadmap-timeline{padding-left:2.5rem}.roadmap-phase:before{left:-32px}.tokenomics-grid,.trade-grid,.links-grid{grid-template-columns:1fr}.iframe-container{padding-bottom:65%}
+}
+@media (max-width:480px){
+  .logo-text{font-size:1rem}.logo-section img{width:44px;height:44px} h1{font-size:1.9rem} h2{font-size:1.6rem}
+  .eyebrow{font-size:.7rem}.hero-subtitle{font-size:1rem}.btn{padding:.85rem 1.5rem;font-size:.85rem} nav{gap:1rem} nav a{font-size:.7rem}
+  .iframe-container{padding-bottom:100%}
+}
+</style>
+
+<section id="discussion">
+  <h2>Community Discussion</h2>
+  <p class="section-subtitle">Join the conversation about DAWG, share ideas, and discuss the token with the community.</p>
+  <div class="discussion-card">
+    <div id="discussion-status" class="chart-status-label">Discussion widget - placeholder</div>
+    <div class="iframe-container">
+      <iframe id="discussion-iframe" src="https://example.com/discussion" title="DAWG Community Discussion"></iframe>
+    </div>
+    <a href="https://example.com/discussion" target="_blank" rel="noopener noreferrer" class="discussion-fallback-btn">Open Discussion Forum</a>
+  </div>
+</section>
