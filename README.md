@@ -1,10 +1,10 @@
 # The Pack's Signal in the Stars
 
-StarDawg is a premium Solana meme token site with strong visual identity, clear messaging, and real utility.
+StarDawg is a premium Solana meme token site with a strong visual identity, clear messaging, and real utility.
 
 ## About StarDawg
 
-StarDawg represents more than just a token â€” it's a movement. Built on Solana's lightning-fast blockchain, $DAWG combines the energy of meme culture with genuine utility and premium positioning.
+StarDawg represents more than just a token â€” itâ€™s a movement. Built on Solanaâ€™s lightning-fast blockchain, $DAWG combines the energy of meme culture with genuine utility and premium positioning.
 
 Our mission is clear: deliver a token with distinctive visual identity, compelling messaging, and real-world use cases. StarDawg is engineered for communities that demand excellence.
 
