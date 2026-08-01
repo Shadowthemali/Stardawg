@@ -1,74 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StarDawg White Paper</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0b0b10;--bg2:#11111a;--panel:#141420;--panel2:#191927;--text:#f4f1e8;--muted:#b5af9f;--line:rgba(212,175,55,.18);--accent:#d4af37;--accent2:#8d7440;--radius:20px;--shadow:0 24px 70px rgba(0,0,0,.38);--max:1080px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Inter',system-ui,sans-serif;background:radial-gradient(circle at top,rgba(212,175,55,.09),transparent 32%),linear-gradient(180deg,var(--bg2),var(--bg));color:var(--text);line-height:1.65}a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}header{position:sticky;top:0;z-index:20;background:rgba(11,11,16,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 0;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}.brand-mark{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 7px rgba(212,175,55,.12)}.navlinks{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}.hero{padding:72px 0 34px}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.24em;font-size:.76rem;font-weight:700}.eyebrow:before{content:'';width:28px;height:1px;background:var(--line)}h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.02;margin:0}h1{font-size:clamp(3rem,8vw,6.6rem);max-width:11ch;margin-top:12px}h2{font-size:clamp(1.9rem,3.8vw,3rem);margin-bottom:14px}h3{font-size:1.35rem;margin-bottom:10px}.lead{max-width:68ch;font-size:1.08rem;color:var(--muted);margin-top:18px}.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:13px 18px;border-radius:999px;font-weight:700;border:1px solid var(--line)}.btn.primary{background:var(--accent);color:#161106;border-color:transparent}.btn.secondary{background:rgba(255,255,255,.02)}.section{padding:18px 0}.panel{background:linear-gradient(180deg,rgba(255,255,255,.03),transparent),var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}.subtle{color:var(--muted);max-width:60ch}.grid{display:grid;gap:16px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:20px}.stat .big{display:block;font-size:2rem;font-weight:800;line-height:1;color:var(--accent);margin-bottom:6px}.roadmap{display:grid;gap:14px}.phase{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:20px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}.phase b{color:var(--accent)}.chart{display:grid;place-items:center;min-height:260px;border-radius:18px;border:1px dashed rgba(212,175,55,.35);background:repeating-linear-gradient(135deg,rgba(212,175,55,.08) 0 12px,rgba(255,255,255,.01) 12px 24px),var(--panel2);text-align:center;padding:22px}.note{font-size:.95rem;color:var(--muted)}ul{margin:0;padding-left:18px;color:var(--muted)}li+li{margin-top:8px}footer{padding:44px 0 76px;color:var(--muted)}.fineprint{font-size:.9rem;max-width:72ch}@media (max-width:860px){.two,.three{grid-template-columns:1fr}.phase{grid-template-columns:1fr}h1{max-width:12ch}.wrap{padding:0 18px}}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarDawg ($DAWG) | Official Whitepaper</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --surface-color: #0c0d0c;
+            --surface-highlight: #141714;
+            --border-color: rgba(0, 255, 102, 0.12);
+            --border-hover: rgba(0, 255, 102, 0.3);
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --accent-color: #00E676;
+            --accent-hover: #69F0AE;
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --max-width: 900px;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'General Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(0, 230, 118, 0.12) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 40px;
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: rgba(0, 230, 118, 0.3);
+            color: #fff;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 14px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 230, 118, 0.2);
+        }
+
+        .brand span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            text-shadow: none;
+        }
+
+        .hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 24px;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 30px rgba(0, 230, 118, 0.3);
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--accent-color);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 230, 118, 0.25);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .lead {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 65ch;
+            margin: 0 auto 40px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+            text-shadow: none;
+        }
+
+        .btn-secondary {
+            background: rgba(0, 230, 118, 0.05);
+            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 230, 118, 0.1);
+            border-color: var(--accent-color);
+            text-shadow: none;
+        }
+
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 60ch;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+        .card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            background: var(--surface-highlight);
+            box-shadow: 0 10px 30px rgba(0, 230, 118, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .disclosure {
+            margin-top: 32px;
+            padding: 20px 24px;
+            background: rgba(0, 230, 118, 0.05);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .disclosure strong {
+            color: var(--accent-color);
+        }
+
+        .roadmap-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .phase-item {
+            display: flex;
+            gap: 24px;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .phase-item:hover {
+            border-color: var(--border-hover);
+            background: var(--surface-highlight);
+        }
+
+        .phase-badge {
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            height: fit-content;
+            white-space: nowrap;
+            border: 1px solid rgba(0, 230, 118, 0.2);
+        }
+
+        .chart-frame {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        #dexscreener-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 125%;
+            overflow: hidden;
+            border-radius: calc(var(--radius-lg) - 8px);
+        }
+
+        #dexscreener-embed iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: 0;
+        }
+
+        @media (min-width: 1024px) {
+            #dexscreener-embed { padding-bottom: 65%; }
+        }
+
+        .chart-note {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer {
+            padding: 48px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .phase-item { flex-direction: column; gap: 12px; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="index.html"><span class="brand-mark"></span><span>StarDawg</span></a><nav class="navlinks"><a href="#tokenomics">Tokenomics</a><a href="#roadmap">Roadmap</a><a href="#risks">Risks</a><a href="index.html#links">Back to site</a></nav></div></header>
-<main class="wrap">
-<section class="hero" id="top">
-  <div class="eyebrow">$DAWG white paper</div>
-  <h1>The Pack’s Signal in the Stars</h1>
-  <p class="lead">StarDawg is a Solana utility token built around a clear public identity, community-led growth, and a roadmap that can expand without losing focus. This paper explains the project vision, token structure, utility direction, roadmap, and operating principles.</p>
-  <div class="cta"><a class="btn primary" href="#tokenomics">Read tokenomics</a><a class="btn secondary" href="index.html#trade">View trading links</a></div>
-</section>
-<section class="section panel">
-  <div class="section-title"><div><span class="eyebrow">Overview</span><h2>What StarDawg Is</h2></div><p class="subtle">A concise public document for the project’s identity, supply structure, and next steps.</p></div>
-  <div class="grid two">
-    <p>StarDawg is a Solana utility token built around a recognizable brand, a community-first message, and a roadmap that can evolve without drifting off mission.</p>
-    <p>The goal is to launch with clarity, keep the structure easy to verify, and add utility in measured phases as the community matures.</p>
-  </div>
-</section>
-<section class="section" id="tokenomics">
-  <div class="section-title"><div><span class="eyebrow">Supply</span><h2>Tokenomics</h2></div><p class="subtle">Simple, readable allocation language without clutter.</p></div>
-  <div class="grid three">
-    <div class="stat"><span class="big">1B</span><span>Total supply of DAWG tokens.</span></div>
-    <div class="stat"><span class="big">20%</span><span>Estimated user allocation, vested and locked.</span></div>
-    <div class="stat"><span class="big">Solana</span><span>Network chosen for speed, low fees, and reach.</span></div>
-  </div>
-  <div class="grid two" style="margin-top:16px">
-    <div class="panel"><h3>Distribution</h3><p>Supply is designed to support community growth, project operations, liquidity, and long-term ecosystem development.</p></div>
-    <div class="panel"><h3>Principles</h3><p>Keep the structure readable, maintain public consistency across the site and token materials, and preserve trust by clearly labeling what is fixed and what may evolve.</p></div>
-  </div>
-</section>
-<section class="section">
-  <div class="section-title"><div><span class="eyebrow">Purpose</span><h2>Utility and Value</h2></div><p class="subtle">Why the token exists beyond the launch moment.</p></div>
-  <div class="grid two">
-    <div class="panel"><h3>Community utility</h3><p>DAWG can support access, participation, community recognition, and future features that reward engagement without making the token dependent on hype.</p></div>
-    <div class="panel"><h3>Brand utility</h3><p>The project’s identity is part of its value: clear design, clear links, and a consistent story help holders and visitors understand the project quickly.</p></div>
-  </div>
-</section>
-<section class="section" id="roadmap">
-  <div class="section-title"><div><span class="eyebrow">Plan</span><h2>Roadmap</h2></div><p class="subtle">Five clear phases from foundation to expansion.</p></div>
-  <div class="roadmap">
-    <div class="phase"><b>Phase 0</b><div><h3>Foundation</h3><p>Lock the brand, publish the official site, finalize public messaging, and make the project easy to verify and follow.</p></div></div>
-    <div class="phase"><b>Phase 1</b><div><h3>Launch</h3><p>Build awareness, drive initial traffic, and make the website the central source for official information and links.</p></div></div>
-    <div class="phase"><b>Phase 2</b><div><h3>Community Growth</h3><p>Turn launch attention into an active recurring community with content, engagement loops, and contributor pathways.</p></div></div>
-    <div class="phase"><b>Phase 3</b><div><h3>Utility Experiments</h3><p>Test small useful features such as gated content, lightweight rewards, or community tools without overcomplicating the project.</p></div></div>
-    <div class="phase"><b>Phase 4</b><div><h3>Ecosystem Expansion</h3><p>Expand partnerships, refine the site and docs, and evolve the project into a recognizable ecosystem brand.</p></div></div>
-  </div>
-</section>
-<section class="section">
-  <div class="section-title"><div><span class="eyebrow">Visual</span><h2>Chart Placeholder</h2></div><p class="subtle">A cleaner framed area for your live chart or a token graphic.</p></div>
-  <div class="chart"><div><h3 style="margin-bottom:8px">Insert the token chart here</h3><p class="note">This section can host a live embed, chart image, or summary graphic.</p></div></div>
-</section>
-<section class="section" id="risks">
-  <div class="section-title"><div><span class="eyebrow">Notes</span><h2>Risks and Disclosures</h2></div><p class="subtle">Keep the page honest and easy to read.</p></div>
-  <div class="grid two">
-    <div class="panel"><h3>Market risk</h3><p>Token markets are volatile, and community participation does not guarantee price performance.</p></div>
-    <div class="panel"><h3>Project risk</h3><p>Roadmap items may change as the project develops and responds to community feedback.</p></div>
-  </div>
-</section>
-</main>
-<footer class="wrap">
-  <p class="fineprint">StarDawg white paper draft for public site deployment. Return to the main site for trading links, chart access, and social navigation.</p>
-</footer>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="brand">
+                <img src="https://static-create.jup.ag/images/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx-4245ad5b-9afe-4a7a-bd83-0c387bc0a2f3.jpg" alt="StarDawg Logo" class="brand-logo">
+                Star<span>Dawg</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#liquidity">Liquidity</a>
+                <a href="#chart">Chart</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="index.html">← Back to Site</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container" id="top">
+            <img src="https://static-create.jup.ag/images/7SCExaiybqz5DDnW3nb7jZg4EMcKAXGra3XFMTpyjupx-4245ad5b-9afe-4a7a-bd83-0c387bc0a2f3.jpg" alt="StarDawg Logo" class="hero-logo">
+            <div class="pill">Official Whitepaper</div>
+            <h1>The Pack's Signal<br>in the Stars</h1>
+            <p class="lead">StarDawg ($DAWG) is a Solana utility token built around a clear public identity, community-led growth, and a roadmap that can expand without losing focus.</p>
+            <div class="button-group">
+                <a class="btn btn-primary" href="#tokenomics">Read Documentation</a>
+                <a class="btn btn-secondary" href="index.html#trade">Trading Links</a>
+            </div>
+        </section>
+
+        <section class="section container" id="tokenomics">
+            <div class="section-header">
+                <h2>Project Structure</h2>
+                <p>A concise overview of the project's identity, supply structure, and operational principles.</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Token Distribution</h3>
+                    <p>Supply is carefully designed to support community growth, project operations, decentralized liquidity, and long-term ecosystem development without relying on artificial mechanics.</p>
+                </div>
+                <div class="card">
+                    <h3>Core Principles</h3>
+                    <p>Keep the structure readable, maintain public consistency across the site and token materials, and preserve trust by clearly labeling what is fixed and what may organically evolve.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="liquidity">
+            <div class="section-header">
+                <h2>DAWG / cbBTC Liquidity</h2>
+                <p>A Bitcoin-denominated on-chain market route running on Solana's high-performance infrastructure.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>The Pair Asset</h3>
+                    <p>cbBTC is Coinbase Wrapped Bitcoin. It is a fully backed token designed to represent Bitcoin securely on supported networks, including Solana.</p>
+                </div>
+                <div class="card">
+                    <h3>Strategic Purpose</h3>
+                    <p>The pool provides a direct market for DAWG against a premier Bitcoin-linked asset, creating robust trading routes subject to market conditions.</p>
+                </div>
+                <div class="card">
+                    <h3>Independent Verification</h3>
+                    <p>Before executing any swap, always independently check the DAWG token mint, the liquidity pool address, price impact, and transaction fees.</p>
+                </div>
+            </div>
+            <div class="disclosure">
+                <strong>Risk Notice:</strong> Both assets in a liquidity pair can fluctuate in value. Deep liquidity is not guaranteed, and trades may be subject to price impact, smart-contract risk, and third-party platform dependencies.
+            </div>
+        </section>
+
+        <section class="section container" id="chart">
+            <div class="section-header">
+                <h2>Live Market Data</h2>
+                <p>Real-time price action, trading volume, and market movement tracked securely via DEX Screener.</p>
+            </div>
+            <div class="chart-frame">
+                <div id="dexscreener-embed">
+                    <iframe src="https://dexscreener.com/solana/2rT78zP5zhscrvBujZGC6isgbe9gqHgYwNkRK2HVi3vr?embed=1&amp;loadChartSettings=0&amp;chartLeftToolbar=0&amp;chartDefaultOnMobile=1&amp;chartTheme=dark&amp;theme=dark&amp;chartStyle=0&amp;chartType=usd&amp;interval=15" title="StarDawg live market chart on DEX Screener" loading="lazy" allowfullscreen></iframe>
+                </div>
+            </div>
+            <p class="chart-note">Market data is embedded directly from DEX Screener and updates automatically. Informational only, not financial advice.</p>
+        </section>
+
+        <section class="section container" id="roadmap">
+            <div class="section-header">
+                <h2>Development Roadmap</h2>
+                <p>Five measured phases taking StarDawg from foundational launch to ecosystem expansion.</p>
+            </div>
+            <div class="roadmap-list">
+                <div class="phase-item">
+                    <div class="phase-badge">Phase 0</div>
+                    <div>
+                        <h3>Foundation</h3>
+                        <p>Lock the brand identity, deploy the official site infrastructure, finalize public messaging, and make the token easily verifiable.</p>
+                    </div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-badge">Phase 1</div>
+                    <div>
+                        <h3>Launch & Awareness</h3>
+                        <p>Build initial awareness, drive traffic, and establish the main website as the definitive source for official information and ecosystem links.</p>
+                    </div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-badge">Phase 2</div>
+                    <div>
+                        <h3>Community Growth</h3>
+                        <p>Convert launch attention into an active, recurring community. Implement engagement loops and open pathways for community contributors.</p>
+                    </div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-badge">Phase 3</div>
+                    <div>
+                        <h3>Utility Experiments</h3>
+                        <p>Deploy and test lightweight useful features—such as gated content, community tools, or social rewards—without overcomplicating the protocol.</p>
+                    </div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-badge">Phase 4</div>
+                    <div>
+                        <h3>Ecosystem Expansion</h3>
+                        <p>Secure strategic partnerships, refine platform documentation, and mature StarDawg into a highly recognizable Solana ecosystem brand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="risks">
+            <div class="section-header">
+                <h2>Risks & Disclosures</h2>
+                <p>Maintaining an honest, transparent relationship with the community.</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Market Volatility</h3>
+                    <p>Cryptocurrency and token markets are inherently highly volatile. Community participation, hype, or development progress does not guarantee price performance or financial returns.</p>
+                </div>
+                <div class="card">
+                    <h3>Development Adaptation</h3>
+                    <p>Roadmap items, timelines, and utility targets are directional. They may adapt or change entirely as the project develops, responds to market conditions, and gathers community feedback.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2026 StarDawg Protocol. Built on Solana.</p>
+        <p style="margin-top: 8px;"><a href="index.html">Return to main site</a></p>
+    </footer>
+
 </body>
 </html>
