@@ -1,30 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#040806">
-  <title>StarDawg | Launching</title>
+  <meta charset="UTF-8" />
+  <title>StarDawg – Launching</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
-    :root{color-scheme:dark;--bg:#040806;--panel:#0a1110;--text:#edf8ef;--muted:#9db4a2;--green:#3cff8a;--green2:#1bb85d}*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;overflow:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,#163b254d,transparent 31%),radial-gradient(circle at 88% 80%,#0c522a42,transparent 32%),var(--bg)}.stars,.stars:before,.stars:after{position:absolute;inset:0;content:"";background-image:radial-gradient(#dfffe840 1px,transparent 1.5px);background-size:44px 44px;pointer-events:none}.stars:before{transform:rotate(24deg) scale(1.3);opacity:.55}.stars:after{transform:rotate(-16deg) scale(.75);opacity:.45}.panel{position:relative;z-index:1;width:min(520px,calc(100% - 32px));padding:clamp(30px,6vw,54px);text-align:center;border:1px solid #5eff9230;border-radius:30px;background:linear-gradient(145deg,#0f1d16e8,#060b08f2);box-shadow:0 40px 110px #000b,0 0 80px #3cff8a12;backdrop-filter:blur(18px)}.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green);font-weight:800}.panel h1{margin:13px 0 8px;font-size:clamp(2rem,7vw,3.55rem);line-height:.96;letter-spacing:-.06em}.panel p{margin:0 auto;max-width:37ch;color:var(--muted);line-height:1.65}.stage{height:230px;margin:26px 0 21px;display:grid;place-items:center;perspective:900px}.ring{width:190px;height:190px;display:grid;place-items:center;border-radius:50%;background:conic-gradient(from 0deg,#3cff8a,#1b673b 17%,transparent 34%,#3cff8a 52%,transparent 69%,#1bb85d 85%,#3cff8a);box-shadow:0 0 35px #3cff8a77,inset 0 0 22px #3cff8a55;animation:orbit 5s linear infinite}.coin{width:165px;height:165px;padding:7px;border-radius:50%;background:linear-gradient(135deg,#6effab,#0a4726);box-shadow:inset 0 0 0 1px #d9ffe866,0 20px 42px #000b;animation:spinSlow 10s linear infinite;transform-style:preserve-3d}.coin.fast{animation:spinFast 2.35s linear infinite}.coin img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;border:1px solid #ffffff28;background:#061008;transform:translateZ(18px)}.load-label{display:flex;justify-content:space-between;gap:16px;margin:0 0 10px;font-size:.71rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.bar{height:7px;overflow:hidden;border-radius:20px;background:#142119;border:1px solid #5eff9229}.bar i{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--green2),var(--green));box-shadow:0 0 20px #3cff8a;animation:load 9s cubic-bezier(.2,.8,.2,1) forwards}.skip{display:inline-block;margin-top:25px;color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}.skip:hover,.skip:focus-visible{color:#fff}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes spinSlow{to{transform:rotateY(360deg) rotateX(10deg)}}@keyframes spinFast{to{transform:rotateY(720deg) rotateX(10deg)}}@keyframes load{15%{width:18%}45%{width:48%}75%{width:80%}100%{width:100%}}@media (prefers-reduced-motion:reduce){.ring,.coin,.coin.fast,.bar i{animation:none}.bar i{width:100%}}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #edf8ef;
+      background:
+        radial-gradient(circle at top left, rgba(60, 255, 138, 0.18), transparent 38%),
+        radial-gradient(circle at 80% 20%, rgba(35, 165, 79, 0.14), transparent 32%),
+        linear-gradient(180deg, #040806 0%, #020305 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .shell {
+      position: relative;
+      width: min(480px, 100%);
+      padding: 2.5rem 2.25rem 2.75rem;
+      border-radius: 1.6rem;
+      border: 1px solid rgba(94, 255, 146, 0.22);
+      background: radial-gradient(circle at top, rgba(60, 255, 138, 0.06), transparent 52%),
+                  linear-gradient(160deg, rgba(10, 17, 12, 0.95), rgba4, 10, 6, 0.98);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(20px);
+    }
+
+    .brand-line {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #9db4a2;
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      font-family: "Cabinet Grotesk", system-ui, sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #9db4a2;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .viewport {
+      margin-top: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 900px;
+    }
+
+    .token-orbit {
+      width: 170px;
+      height: 170px;
+      border-radius: 999px;
+      padding: 10px;
+      background:
+        radial-gradient(circle at 30% 0%, rgba(60, 255, 138, 0.75), transparent 62%),
+        radial-gradient(circle at 80% 80%, rgba(27, 184, 93, 0.4), transparent 52%);
+      box-shadow:
+        0 0 0 1px rgba(60, 255, 138, 0.35),
+        0 0 45px rgba(60, 255, 138, 0.45),
+        0 24px 70px rgba(0, 0, 0, 0.9);
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .token-core {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background:
+        radial-gradient(circle at 30% 0%, rgba255, 255, 255, 0.18, transparent 60%),
+        #061008;
+      transform-style: preserve-3d;
+    }
+
+    .token-core img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: saturate(1.15) contrast(1.05);
+      transform: translateZ(35px);
+    }
+
+    .spin-slow {
+      animation: spinTokenSlow 12s linear infinite;
+    }
+
+    .spin-fast {
+      animation: spinTokenFast 4s linear infinite;
+    }
+
+    @keyframes spinTokenSlow {
+      0%   { transform: rotateY(0deg) rotateX(14deg); }
+      100% { transform: rotateY(360deg) rotateX(14deg); }
+    }
+
+    @keyframes spinTokenFast {
+      0%   { transform: rotateY(0deg) rotateX(14deg); }
+      100% { transform: rotateY(720deg) rotateX(14deg); }
+    }
+
+    .status {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .status-line {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #71847a;
+    }
+
+    .progress-shell {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(13, 24, 16, 0.95);
+      overflow: hidden;
+      border: 1px solid rgba(94, 255, 146, 0.25);
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #6effab, #26d172);
+      box-shadow: 0 0 22px rgba(60, 255, 138, 0.7);
+      animation: loadBar 9s ease-out forwards;
+    }
+
+    @keyframes loadBar {
+      0%   { width: 0%; }
+      30%  { width: 28%; }
+      70%  { width: 72%; }
+      100% { width: 100%; }
+    }
+
+    .note {
+      font-size: 0.75rem;
+      color: #9db4a2;
+      margin-top: 0.4rem;
+    }
+
+    .hint {
+      margin-top: 1.4rem;
+      font-size: 0.78rem;
+      color: #71847a;
+    }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
-  <main class="panel">
-    <div class="eyebrow">Solana native · DAWG</div>
-    <h1>Preparing the signal.</h1>
-    <p>Initializing the StarDawg experience for the pack.</p>
-    <div class="stage"><div class="ring"><div class="coin" id="coin"><img src="https://raw.githubusercontent.com/Shadowthemali/Stardawg/main/assets/stardawg-token-logo.jpeg" alt="StarDawg token"></div></div></div>
-    <div class="load-label"><span id="state">Warming up</span><span id="percent">0%</span></div>
-    <div class="bar"><i></i></div>
-    <a class="skip" href="main.html">Enter site now →</a>
-  </main>
+  <div class="shell">
+    <div class="brand-line">StarDawg • Solana Native</div>
+    <div class="title">Launching DAWG</div>
+    <div class="subtitle">
+      Professional startup sequence for the pack. Initializing the trading experience and loading the main site.
+    </div>
+
+    <div class="viewport">
+      <div class="token-orbit">
+        <div class="token-core spin-slow" id="dawgToken">
+          <img src="./assets/stardawg-token-logo.jpeg" alt="StarDawg token" />
+        </div>
+      </div>
+    </div>
+
+    <div class="status">
+      <div class="status-line" id="statusText">Phase 1 · Warming up the signal</div>
+      <div class="progress-shell">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="note">Please wait while we prepare the main StarDawg page.</div>
+      <div class="hint">You&apos;ll be automatically redirected once the sequence completes.</div>
+    </div>
+  </div>
+
   <script>
-    const coin=document.getElementById('coin'),state=document.getElementById('state'),percent=document.getElementById('percent');
-    setTimeout(()=>{coin.classList.add('fast');state.textContent='Accelerating';percent.textContent='42%'},3200);
-    setTimeout(()=>{state.textContent='Entering StarDawg';percent.textContent='100%'},8200);
-    setTimeout(()=>location.replace('main.html'),9200);
+    const token = document.getElementById('dawgToken');
+    const statusText = document.getElementById('statusText');
+
+    setTimeout(() => {
+      token.classList.remove('spin-slow');
+      token.classList.add('spin-fast');
+      statusText.textContent = 'Phase 2 · Accelerating for launch';
+    }, 3500);
+
+    setTimeout(() => {
+      statusText.textContent = 'Phase 3 · Entering the StarDawg site';
+      window.location.href = 'main.html';
+    }, 9500);
   </script>
 </body>
 </html>
