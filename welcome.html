@@ -15,16 +15,16 @@
     <div class="eyebrow">Solana native · DAWG</div>
     <h1>Preparing the signal.</h1>
     <p>Initializing the StarDawg experience for the pack.</p>
-    <div class="stage"><div class="ring"><div class="coin" id="coin"><img src="./assets/stardawg-token-logo.jpeg" alt="StarDawg token"></div></div></div>
+    <div class="stage"><div class="ring"><div class="coin" id="coin"><img src="https://raw.githubusercontent.com/Shadowthemali/Stardawg/main/assets/stardawg-token-logo.jpeg" alt="StarDawg token"></div></div></div>
     <div class="load-label"><span id="state">Warming up</span><span id="percent">0%</span></div>
     <div class="bar"><i></i></div>
-    <a class="skip" href="index.html">Enter site now →</a>
+    <a class="skip" href="main.html">Enter site now →</a>
   </main>
   <script>
     const coin=document.getElementById('coin'),state=document.getElementById('state'),percent=document.getElementById('percent');
     setTimeout(()=>{coin.classList.add('fast');state.textContent='Accelerating';percent.textContent='42%'},3200);
     setTimeout(()=>{state.textContent='Entering StarDawg';percent.textContent='100%'},8200);
-    setTimeout(()=>location.replace('index.html'),9200);
+    setTimeout(()=>location.replace('main.html'),9200);
   </script>
 </body>
 </html>
